@@ -34,3 +34,12 @@ http.port: 9200
 $ cd elasticsearch-6.2.4/bin
 $ ./elasticsearch
 ```
+* Caso haja algum erro como este:
+```console
+elasticsearch_1 | ERROR: bootstrap checks failed
+elasticsearch_1 | max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+```
+* Execute este comando como sudo(root/superUsuario)
+```bash
+$ sudo sysctl -w vm.max_map_count=262144
+```
