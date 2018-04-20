@@ -16,9 +16,9 @@ import org.elasticsearch.transport.client.PreBuiltTransportClient;
 public class Main {
 	public static void main(String args[]) throws UnknownHostException {
 		Settings settings = Settings.builder()
-		        .put("client.transport.ignore_cluster_name", true).build();
+		        .put("cluster.name", "myClusterName").build();
 		TransportClient client = new PreBuiltTransportClient(settings)
-				.addTransportAddress(new TransportAddress(InetAddress.getByName("192.168.100.242"), 9200));
+				.addTransportAddress(new TransportAddress(InetAddress.getByName("192.168.100.242"), 9300));
 
 		Map<String, Object> json = new HashMap<String, Object>();
 		json.put("user", "Wagner");
