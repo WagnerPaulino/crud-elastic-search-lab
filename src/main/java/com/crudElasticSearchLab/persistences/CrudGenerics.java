@@ -1,4 +1,4 @@
-package com.crudElasticSearchLab;
+package com.crudElasticSearchLab.persistences;
 
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
@@ -15,8 +15,9 @@ public abstract class CrudGenerics<T> {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void save(TransportClient client ,String index, String type, String id, T obg){
+	public IndexResponse save(TransportClient client ,String index, String type, String id, T obg){
 		IndexResponse response = client.prepareIndex(index, type, id).setSource(obg, XContentType.JSON).get();
+		return response;
 	}
 	
 }
