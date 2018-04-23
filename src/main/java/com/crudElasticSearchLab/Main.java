@@ -13,9 +13,9 @@ import com.crudElasticSearchLab.persistences.PessoaDao;
 
 public class Main{
 	
-	private static PessoaDao dao;
+	private static PessoaDao dao = new PessoaDao();
 	public Main() {
-		dao = new PessoaDao();
+		
 	}
 
 	public static void main(String args[]) throws UnknownHostException {
