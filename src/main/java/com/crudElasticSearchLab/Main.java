@@ -25,6 +25,7 @@ public class Main{
 		Pessoa json = new Pessoa.PessoaBuilder().nome("Wagner").sobrenome("Paulino").apelido("celebro").idade(25)
 				.build();
 		dao.save(client, "twitter", "tweet", "1", json);
+		System.out.println(dao.findOne(client, "twitter", "tweet", "1"));
 
 	}
 }
