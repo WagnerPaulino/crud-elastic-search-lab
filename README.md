@@ -29,11 +29,21 @@ $ nano elasticsearch-6.2.4/config/elasticsearch.yml
 network.host: 192.168.100.242
 http.port: 9200
 ```
+Para alterar a porta que a aplicação devera utilizar para se comunicar com o elasticsearch(O padrão é 9300)
+```yml
+http.publish_port: 9300
+```
+* Para nomear o cluster
+```yml
+cluster.name: myClusterName
+```
+
 * Executar o elasticsearch
 ```bash
 $ cd elasticsearch-6.2.4/bin
 $ ./elasticsearch
 ```
+# Importante
 * Caso haja algum erro como este:
 ```console
 elasticsearch_1 | ERROR: bootstrap checks failed
@@ -42,4 +52,9 @@ elasticsearch_1 | max virtual memory areas vm.max_map_count [65530] is too low, 
 * Execute este comando como sudo(root/superUsuario)
 ```bash
 $ sudo sysctl -w vm.max_map_count=262144
+```
+* Para habilitar a escrita e leitura, descomente/adicione estás propriedades no elasticsearch.yml
+```yml
+cluster.routing.allocation.disk.threshold_enabled: false
+cluster.blocks.read_only_allow_delete: false
 ```
