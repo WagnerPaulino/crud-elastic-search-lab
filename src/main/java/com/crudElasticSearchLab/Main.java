@@ -14,10 +14,7 @@ import com.crudElasticSearchLab.persistences.PessoaDao;
 public class Main{
 	
 	private static PessoaDao dao = new PessoaDao();
-	public Main() {
-		
-	}
-
+	
 	public static void main(String args[]) throws UnknownHostException {
 		Settings settings = Settings.builder().put("cluster.name", "myClusterName").build();
 		TransportClient client = new PreBuiltTransportClient(settings);
@@ -26,6 +23,7 @@ public class Main{
 				.build();
 		dao.save(client, "twitter", "tweet", "1", json);
 		System.out.println(dao.findOne(client, "twitter", "tweet", "1"));
+		dao.deleteOne(client,"twitter", "tweet", "1");
 
 	}
 }

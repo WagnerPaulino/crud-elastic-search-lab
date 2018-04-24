@@ -7,13 +7,6 @@ import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
 
 public abstract class CrudGenerics<T> {
-	
-	public CrudGenerics(Class<T> obj) {
-	}
-	
-	public CrudGenerics() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public IndexResponse save(TransportClient client ,String index, String type, String id, T obg){
 		Map<String, T> map = new HashMap<>();
@@ -29,6 +22,9 @@ public abstract class CrudGenerics<T> {
 			t = entry.getValue();
 		}
 		return (T) t;
+	}
+	public void deleteOne(TransportClient client ,String index, String type, String id){
+		client.prepareDelete(index,type, id).get();		
 	}
 	
 }
