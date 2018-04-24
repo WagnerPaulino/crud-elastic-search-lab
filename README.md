@@ -53,7 +53,8 @@ elasticsearch_1 | max virtual memory areas vm.max_map_count [65530] is too low, 
 ```bash
 $ sudo sysctl -w vm.max_map_count=262144
 ```
-* Para habilitar a escrita e leitura, descomente/adicione está propriedade no elasticsearch.yml
+* Para habilitar a escrita e leitura, descomente/adicione estás propriedades no elasticsearch.yml
 ```yml
 cluster.routing.allocation.disk.threshold_enabled: false
+blocks.read_only_allow_delete: false
 ```
