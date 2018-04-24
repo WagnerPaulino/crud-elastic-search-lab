@@ -29,6 +29,10 @@ $ nano elasticsearch-6.2.4/config/elasticsearch.yml
 network.host: 192.168.100.242
 http.port: 9200
 ```
+Para alterar a porta que a aplicação devera utilizar para se comunicar com o elasticsearch(O padrão é 9300)
+```yml
+http.publish_port: 9300
+```
 * Para nomear o cluster
 ```yml
 cluster.name: myClusterName
