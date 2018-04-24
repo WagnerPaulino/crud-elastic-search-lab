@@ -29,6 +29,11 @@ $ nano elasticsearch-6.2.4/config/elasticsearch.yml
 network.host: 192.168.100.242
 http.port: 9200
 ```
+* Para nomear o cluster
+```yml
+cluster.name: myClusterName
+```
+
 * Executar o elasticsearch
 ```bash
 $ cd elasticsearch-6.2.4/bin
