@@ -43,6 +43,7 @@ cluster.name: myClusterName
 $ cd elasticsearch-6.2.4/bin
 $ ./elasticsearch
 ```
+# Importante
 * Caso haja algum erro como este:
 ```console
 elasticsearch_1 | ERROR: bootstrap checks failed
@@ -51,4 +52,8 @@ elasticsearch_1 | max virtual memory areas vm.max_map_count [65530] is too low, 
 * Execute este comando como sudo(root/superUsuario)
 ```bash
 $ sudo sysctl -w vm.max_map_count=262144
+```
+* Para habilitar a escrita e leitura, descomente/adicione está propriedade no elasticsearch.yml
+```yml
+cluster.routing.allocation.disk.threshold_enabled: false
 ```
