@@ -43,7 +43,7 @@ cluster.name: myClusterName
 $ cd elasticsearch-6.2.4/bin
 $ ./elasticsearch
 ```
-# Importante
+<!--# Importante
 * Caso haja algum erro como este:
 ```console
 elasticsearch_1 | ERROR: bootstrap checks failed
@@ -58,3 +58,6 @@ $ sudo sysctl -w vm.max_map_count=262144
 cluster.routing.allocation.disk.threshold_enabled: false
 cluster.blocks.read_only_allow_delete: false
 ```
+-->
+<!-- elasticsearch.url:
+    Default: "http://localhost:9200" The URL of the Elasticsearch instance to use for all your queries. -->
