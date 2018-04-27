@@ -53,6 +53,17 @@ elasticsearch_1 | max virtual memory areas vm.max_map_count [65530] is too low, 
 ```bash
 $ sudo sysctl -w vm.max_map_count=262144
 ```
+* Caso haja algum erro como este: 
+```Console
+ERROR: [1] bootstrap checks failed
+[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+```
+* Execute estes comandos
+```console
+$ sudo su
+# ulimit -n 65536
+# su elasticsearch
+```
 <!--
 * Para habilitar a escrita e leitura, descomente/adicione estás propriedades no elasticsearch.yml
 ```yml
