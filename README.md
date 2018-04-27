@@ -59,5 +59,6 @@ cluster.routing.allocation.disk.threshold_enabled: false
 cluster.blocks.read_only_allow_delete: false
 ```
 -->
+# Instalação do Kibana
 <!-- elasticsearch.url:
     Default: "http://localhost:9200" The URL of the Elasticsearch instance to use for all your queries. -->
