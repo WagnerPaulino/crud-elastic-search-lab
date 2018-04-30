@@ -92,6 +92,8 @@ elasticsearch.url: http|https://ip|host:port
     Default: "http://localhost:9200" The URL of the Elasticsearch instance to use for all your queries. -->
 # Importante
 Para mudar o host ip usar a propriedade no kibana-6.2.4-linux-x86_64/config/kibana.yml
+```bash
+$ nano kibana-6.2.4-linux-x86_64/config/kibana.yml
 ```yml
 server.host: 0.0.0.0
 ```
