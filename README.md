@@ -83,6 +83,7 @@ $ tar -xzf kibana-6.2.4-linux-x86_64.tar.gz
 * colocar a propriedade elasticsearch.url no arquivo kibana-6.2.4-linux-x86_64/config/kibana.yml
 ```bash
 $ nano kibana-6.2.4-linux-x86_64/config/kibana.yml
+```
 ```yml
 elasticsearch.url: http|https://ip|host:port
 ```
@@ -96,6 +97,7 @@ elasticsearch.url: http|https://ip|host:port
 Para mudar o host ip usar a propriedade no kibana-6.2.4-linux-x86_64/config/kibana.yml
 ```bash
 $ nano kibana-6.2.4-linux-x86_64/config/kibana.yml
+```
 ```yml
 server.host: 0.0.0.0
 ```
