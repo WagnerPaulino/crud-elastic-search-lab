@@ -106,3 +106,11 @@ Para mudar a porta usar a propriedade no kibana-6.2.4-linux-x86_64/config/kibana
 server.port: 5601
 ```
 # Instalação LogStash
+* Baixe o Logstash
+```bash
+$ wget https://artifacts.elastic.co/downloads/logstash/logstash-6.2.4.tar.gz
+```
+* Descompacte o logstash
+```bash
+$ tar -xzf logstash-6.2.4.tar.gz
+```
