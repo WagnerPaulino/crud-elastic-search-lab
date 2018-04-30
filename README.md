@@ -114,3 +114,11 @@ $ wget https://artifacts.elastic.co/downloads/logstash/logstash-6.2.4.tar.gz
 ```bash
 $ tar -xzf logstash-6.2.4.tar.gz
 ```
+* Execute o logstash(Demora um pouco para aparecer algo no console)
+```bash
+$ logstash-6.2.4/in/logstash -e 'input { stdin { } } output { stdout {} }'
+```
+* Após isso digite alguma coisa para ver a saida 
+```
+hello word
+```
