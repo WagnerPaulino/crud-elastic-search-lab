@@ -99,3 +99,4 @@ Para mudar a porta usar a propriedade no kibana-6.2.4-linux-x86_64/config/kibana
 ```yml
 server.port: 5601
 ```
+# Instalação LogStash
