@@ -16,7 +16,7 @@ public abstract class CrudGenerics<T> {
 	}
 	
 	public T findOne(TransportClient client ,String index, String type, String id){
-		Map<String, Object> m = client.prepareGet("twitter", "tweet", "1").get().getSource();
+		Map<String, Object> m = client.prepareGet(index, type, id).get().getSource();
 		Object t = new Object();
 		for(Map.Entry<String, Object> entry: m.entrySet()){
 			t = entry.getValue();
