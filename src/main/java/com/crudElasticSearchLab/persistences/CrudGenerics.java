@@ -15,6 +15,7 @@ public abstract class CrudGenerics<T> {
 		return response;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public T findOne(TransportClient client ,String index, String type, String id){
 		Map<String, Object> m = client.prepareGet(index, type, id).get().getSource();
 		Object t = new Object();
