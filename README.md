@@ -122,3 +122,57 @@ $ logstash-6.2.4/in/logstash -e 'input { stdin { } } output { stdout {} }'
 ```
 hello word
 ```
+# FileBeat
+
+* Para habilitar o log, vá em filebeat.yml e altere a propriedade enable para true
+```yml
+filebeat.prospectors:
+
+# Each - is a prospector. Most options can be set at the prospector level, so
+# you can use different prospectors for various configurations.
+# Below are the prospector specific configurations.
+
+- type: log
+
+  # Change to true to enable this prospector configuration.
+  enabled: true
+```
+* Depois diga o arquivo de log que deseja que o filebeat escanee e mande para o elasticsearch na propriedade path
+```yml
+filebeat.prospectors:
+
+# Each - is a prospector. Most options can be set at the prospector level, so
+# you can use different prospectors for various configurations.
+# Below are the prospector specific configurations.
+
+- type: log
+
+  # Change to true to enable this prospector configuration.
+  enabled: true
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - /var/log/auth.log
+    #- c:\programdata\elasticsearch\logs\*
+```
+* Se for preciso altere o endereço/link do kibana na propriedade host do filebeat.yml
+```yml
+#============================== Kibana =====================================
+
+# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
+# This requires a Kibana endpoint configuration.
+setup.kibana:
+
+  # Kibana Host
+  # Scheme and port can be left out and will be set to the default (http and 5601)
+  # In case you specify and additional path, the scheme is required: http://localhost:5601/path
+  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
+  host: "192.168.100.242:5601"
+```
+* Se for preciso altere a propriedade hosts do output.elasticsearch do arquivo filebeat.yml
+```yml
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["192.168.100.242:9200"]
+  ```
