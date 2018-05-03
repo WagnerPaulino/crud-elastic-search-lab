@@ -140,7 +140,7 @@ output {
 ```
 * E executar o logstash assim 
 ```bash
-bin/logstash -f qualquercoisa.conf --config.test_and_exit
+bin/logstash -f qualquercoisa.conf --config.reload.automatic
 ```
 # FileBeat
 
