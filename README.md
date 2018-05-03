@@ -135,7 +135,7 @@ input {
 #
 # }
 output {
-    elasticsearch { hosts: ["10.13.29.71:9200"] }
+    elasticsearch { hosts => ["10.13.29.71:9200"] }
 }
 ```
 * E executar o logstash assim 
