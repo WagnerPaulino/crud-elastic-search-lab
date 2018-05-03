@@ -196,3 +196,7 @@ output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ["192.168.100.242:9200"]
   ```
+  * Depois de realizar as configurações, execute o filebeat
+  ```bash
+  sudo ./filebeat -e -c filebeat.yml -d "publish"
+  ```
