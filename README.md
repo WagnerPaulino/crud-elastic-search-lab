@@ -118,12 +118,12 @@ $ tar -xzf logstash-6.2.4.tar.gz
 ```bash
 $ logstash-6.2.4/in/logstash -e 'input { stdin { } } output { stdout {} }'
 ```
+* Após isso digite alguma coisa para ver a saida 
+```
+hello word
+```
 * Uma opção a esse longo comando é criar um arquivo qualquercoisa.conf na raiz do logstash como esse 
 ```conf
-
-```
-* E executar o logstash assim 
-```bash
 input {
     beats {
         port => "5044"
@@ -138,9 +138,9 @@ output {
     elasticsearch { hosts: ["10.13.29.71:9200"] }
 }
 ```
-* Após isso digite alguma coisa para ver a saida 
-```
-hello word
+* E executar o logstash assim 
+```bash
+bin/logstash -f qualquercoisa.conf --config.test_and_exit
 ```
 # FileBeat
 
