@@ -200,3 +200,16 @@ output.elasticsearch:
   ```bash
   sudo ./filebeat -e -c filebeat.yml -d "publish"
   ```
+# Importante
+* Se ao executar o filebeat e houver algum como esse 
+```bash
+Exiting: error loading config file: config file ("filebeat.yml") must be owned by the beat user (uid=0) or root
+```
+* Execute um desses dois comando 
+```bash
+chown root {beatname}.yml
+```
+* ou 
+```bash 
+chown 501 {beatname}.yml
+```
