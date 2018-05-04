@@ -217,7 +217,19 @@ chown 501 {beatname}.yml
 
 * baixe o xpack: https://www.elastic.co/guide/en/kibana/6.2/installing-xpack-kb.html
 
-* Execute o comando para instalar o xpack no kibana
+* Extraia o arquivo
 ```bash 
-kibana-6.2.4-linux-x86_64/kibana-6.2.4-linux-x86_64/bin/kibana-plugin install ./x-pack-6.2.4.zip 
+$ unzip -x x-pack-6.2.4.zip 
+```
+* Mova o arquivo x-pack dentro da pasta kibana que apareceu depois da descompactação do x-pack para a pasta plugins do kibana
+```bash
+$ mv kibana/x-pack/ ./kibana-6.2.4-linux-x86_64/plugins/
+```
+* Execute este comando para verificar se o x-pack foi instalado
+```bash
+$ .bin/kibana-plugin list
+```
+* A saida deve ser parecida com essa 
+```bash 
+x-pack@6.2.4
 ```
