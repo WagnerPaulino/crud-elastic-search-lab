@@ -213,3 +213,11 @@ chown root {beatname}.yml
 ```bash 
 chown 501 {beatname}.yml
 ```
+# Instalação do XPack para kibana
+
+* baixe o xpack: https://www.elastic.co/guide/en/kibana/6.2/installing-xpack-kb.html
+
+* Execute o comando para instalar o xpack no kibana
+```bash 
+kibana-6.2.4-linux-x86_64/kibana-6.2.4-linux-x86_64/bin/kibana-plugin install ./x-pack-6.2.4.zip 
+```
