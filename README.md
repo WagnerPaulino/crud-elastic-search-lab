@@ -213,6 +213,8 @@ chown root {beatname}.yml
 ```bash 
 chown 501 {beatname}.yml
 ```
+# Instalação do XPack para elasticsearch
+
 # Instalação do XPack para kibana
 
 * baixe o xpack: https://www.elastic.co/guide/en/kibana/6.2/installing-xpack-kb.html
@@ -232,4 +234,21 @@ $ .bin/kibana-plugin list
 * A saida deve ser parecida com essa 
 ```bash 
 x-pack@6.2.4
+```
+* Abra o arquivo kibana.yml dentro de config
+```bash
+$ nano config/kibana.yml 
+```
+* Adicione/Descomente as seguintes linhas e defina um usuario e senha
+```yml 
+elasticsearch.username: "kibana"
+elasticsearch.password: "kibanapassword"
+```
+* Troque o usuario da pasta optimize para o seu 
+```bash
+$ chown -R seuuser:seuuser /path/to/kibana/optimize
+```
+* Execute o kibana e espere ele se otimizar e organizar as coisas(Demora um pouco)
+```bash
+$ ./bin/kibana
 ```
