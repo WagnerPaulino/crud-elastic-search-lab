@@ -278,11 +278,14 @@ $ ./bin/kibana
 ```
 # Instalação do XPack para Logstash
 
-* No logstash você deve informar o usuario e a senha no arquivo .conf da pipeline, ficando semelhantemente assim
+* Instale o xpack no logstash executando esse comando no diretorio do logstash
+
+```bash
+$ bin/logstash-plugin install x-pack
 ```
-output {
-	elasticsearch { hosts => ["10.13.29.71:9200"] 
-			user => "elastic"
-			password => "12345678"
-			}
-}
+
+* Inclua ou descomente as seguintes linhas do arquivo logstash.yml colocando o usuario e senha default do elasticsearch
+```yml
+xpack.monitoring.elasticsearch.username: "userElasticsearch"
+xpack.monitoring.elasticsearch.password: "passElasticsearch"
+```
