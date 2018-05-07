@@ -276,3 +276,13 @@ $ chown -R seuuser:seuuser /path/to/kibana/optimize
 ```bash
 $ ./bin/kibana
 ```
+# Instalação do XPack para Logstash
+
+* No logstash você deve informar o usuario e a senha no arquivo .conf da pipeline, ficando semelhantemente assim
+```
+output {
+	elasticsearch { hosts => ["10.13.29.71:9200"] 
+			user => "elastic"
+			password => "12345678"
+			}
+}
