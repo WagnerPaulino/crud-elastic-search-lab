@@ -213,7 +213,19 @@ chown root {beatname}.yml
 ```bash 
 chown 501 {beatname}.yml
 ```
+
 # Instalação do XPack para elasticsearch
+
+* baixe o xpack: https://www.elastic.co/guide/en/kibana/6.2/installing-xpack-kb.html
+
+* Extraia o arquivo
+```bash 
+$ unzip -x x-pack-6.2.4.zip 
+```
+* Mova a pasta elasticsearch que apareceu depois da descompactação do x-pack para a pasta plugins do elasticsearch
+```bash
+$ mv elasticsearch/ ./elasticsearch-6.2.4/plugins/
+```
 
 * Para criar um usuario inicial($ELASTICSEARCH_HOME)
 
