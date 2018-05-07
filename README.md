@@ -217,11 +217,15 @@ chown 501 {beatname}.yml
 
 * Para criar um usuario inicial
 
+```bash
 bin/elasticsearch-keystore create "username"
+```
 
 * Para adicionar uma senha para o usuario inicial
 
+```bash
 bin/elasticsearch-keystore add "bootstrap.password"
+```
 
 # Instalação do XPack para kibana
 
