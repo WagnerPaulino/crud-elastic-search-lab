@@ -215,13 +215,13 @@ chown 501 {beatname}.yml
 ```
 # Instalação do XPack para elasticsearch
 
-* Para criar um usuario inicial
+* Para criar um usuario inicial($ELASTICSEARCH_HOME)
 
 ```bash
 bin/elasticsearch-keystore create "username"
 ```
 
-* Para adicionar uma senha para o usuario inicial
+* Para adicionar uma senha para o usuario inicial($ELASTICSEARCH_HOME)
 
 ```bash
 bin/elasticsearch-keystore add "bootstrap.password"
