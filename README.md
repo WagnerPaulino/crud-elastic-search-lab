@@ -278,14 +278,30 @@ $ ./bin/kibana
 ```
 # Instalação do XPack para Logstash
 
-* Instale o xpack no logstash executando esse comando no diretorio do logstash
+* crie uma role para logstash 
 
-```bash
-$ bin/logstash-plugin install x-pack
-```
 
-* Inclua ou descomente as seguintes linhas do arquivo logstash.yml colocando o usuario e senha default do elasticsearch
+* Crie um usuario para logstash e atribua a role criada para ele 
+
+* Na pasta raiz do logstash crie um pipeline semelhante a essa abaixo
+
 ```yml
-xpack.monitoring.elasticsearch.username: "userElasticsearch"
-xpack.monitoring.elasticsearch.password: "passElasticsearch"
+input {
+    beats {
+        port => 5044
+    }
+}
+output {
+        elasticsearch {
+                hosts => ["10.13.29.71:9200"]
+                user => "logstash_writer"
+                password => "12345678"
+        }
+        stdout { codec => rubydebug }
+
+}
+```
+* Execute o logstash indicando o arquivo ou pasta que contem as pipelines 
+```bash
+./logstash-6.2.4/bin/logstash -f logstash-6.2.4/first-pipeline.conf 
 ```
