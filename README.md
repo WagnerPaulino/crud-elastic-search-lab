@@ -279,10 +279,9 @@ $ ./bin/kibana
 # Instalação do XPack para Logstash
 
 * crie uma role para logstash 
-
-
+<img src="./role.png" width="75%">
 * Crie um usuario para logstash e atribua a role criada para ele 
-
+<img src="./user.png" width="75%">
 * Na pasta raiz do logstash crie um pipeline semelhante a essa abaixo
 
 ```yml
