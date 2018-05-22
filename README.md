@@ -295,9 +295,8 @@ output {
                 hosts => ["10.13.29.71:9200"]
                 user => "logstash_writer"
                 password => "12345678"
+                index => "syslog"
         }
-        stdout { codec => rubydebug }
-
 }
 ```
 * Execute o logstash indicando o arquivo ou pasta que contem as pipelines 
