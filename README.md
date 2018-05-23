@@ -295,7 +295,7 @@ output {
                 hosts => ["10.13.29.71:9200"]
                 user => "logstash_writer"
                 password => "12345678"
-                index => "syslog"
+                index => "logstash-syslog"
         }
 }
 ```
@@ -303,3 +303,4 @@ output {
 ```bash
 ./logstash-6.2.4/bin/logstash -f logstash-6.2.4/first-pipeline.conf 
 ```
+> Note que o valor do ``index`` estar obedecendo o index-pattern definido na regra de usuario da imagem acima
